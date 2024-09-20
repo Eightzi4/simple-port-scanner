@@ -1,0 +1,17 @@
+[package]
+name = "simple-port-scanner"
+author = "Eightzi4"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+futures = "0.3.30"
+indicatif = "0.17.8"
+
+[profile.release] #Some extra optimizations:
+strip = true
+opt-level = "s"
+lto = true
+codegen-units = 1
+panic = "abort"
